@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport content=width=device-width,initial scale=1.0">
+    <title> ganga</title>
+<style>
+    body{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+    .container{
+        width:100%;
+        height: 250px;
+        border: 1px solid black;
+        padding:10px;
+        background-color: black;
+    }
+    .header{
+        border: 1px solid black;
+        height: 80px;
+    }
+    .content{
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        gap:10px;
+
+    }
+    .left-content,.right-content{
+        width: 50%;
+        border: 1px solid black;
+        padding: 10px;
+        gap:10px;
+        flex-direction:column;
+        display:flex;
+
+
+    }
+    .row{
+        display: flex;
+        gap: 10px;
+        text-align: center;
+    }
+    .box{
+        flex:1;
+        border:1px solid black;
+        height:60px;
+    }
+    
+</style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="header" style="background-color:chocolate;"></div>
+        <div class="content">
+            <div class="left-content">
+                <div class="row">
+                    <div class="box" style="background-color:darkgoldenrod; color:cornsilk"> row 1</div>
+                    <div class="box" style="background-color:rgb(184, 11, 11); color:white">row2</div>
+                </div>
+                <div class="row">
+                    <div class="box" style="background-color:rgb(11, 17, 184);"></div>
+                    <div class="box" style="background-color:rgba(0, 255, 200, 0.534)"></div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="row">
+                    <div class="box" style="background-color:rgb(184, 11, 77);"></div>
+                    <div class="box" style="background-color:rgb(184, 11, 173);"> </div>
+                </div>
+                <div class="row">
+                    <div class="box" style="background-color:rgb(184, 11, 43);"></div>
+                    <div class="box" style="background-color:rgb(11, 184, 80);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>

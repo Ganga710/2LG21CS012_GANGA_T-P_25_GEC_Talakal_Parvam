@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  font-family: 'time-new roman';
+}
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    background-color: #333;
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+/* Header/logo Title */
+.header {
+  text-align: center;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background:purple;
+  color:#f1f1f1
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 940px) {
+    .navbar {
+        display: flex;
+        background-color: #333;
+      }
+      
+      /* Style the navigation bar links */
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+      
+      /* Change color on hover */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    
+    /* Header/logo Title */
+    .header {
+      text-align: center;
+      color: white;
+
+    }
+    
+    /* Column container */
+    .row {  
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    /* Create two unequal columns that sits next to each other */
+    /* Sidebar/left column */
+    .side {
+      background-color: #f1f1f1;
+      width:450px;
+      height:250px;
+    }
+    
+    /* Main column */
+    .main {
+      background-color: white;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      background:lightgreen;
+      color:#f1f1f1
+    }
+    
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <a href="#" style="flex-grow: 80;"> JOG FALLS</a>
+    <a href="https://www.jogfalls.in/index.html"style="flex-grow:0.5;">HOME</a>
+    <a href="https://www.jogfalls.in/about.html"style="flex-grow:0.5;">ABOUT US</a>
+    <a href="https://www.jogfalls.in/gall.html"style="flex-grow:0.5;">GALLERY</a>
+    <a href="http://jogfalls.in/TaxiDetailsEN.html"style="flex-grow:0.5;">TAXI DETAILS</a>
+    <a href="http://jogfalls.in/HotelDetailsEN.html"style="flex-grow:0.5;">HOTEL DETAILS</a>
+    <a href="http://jogfalls.in/SmgaMapEN.html"style="flex-grow:0.5;">TOURIST PLACES</a>
+    <a href="http://jogfalls.in/ContactEN.html"style="flex-grow:0.5;">CONTACTS</a>
+  </div>
+
+<!-- Header -->
+<div class="header">
+    <img src="image.png" alt="Girl in a jacket" style="width:1600px;height:500px; display:flex; align-items:center;">
+</div>
+<!-- Navigation Bar -->
+<div class="navbar">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  <div class="side">
+    <h2>About JMA</h2>
+    <img src="th.jpg" alt="Girl in a jacket" style="width:450px;height:250px; display:flex; ">
+    <p>Jog Falls is the second-highest plunge waterfall in India, Located near Sagara, Shimoga District of Karnataka state, these segmented falls are a major tourist attraction. It is also called by alternative names of Gerusoppe falls, Gersoppa Falls and Jogada Gundi. Jog Falls is created by the Sharavathi River falling from a height of 253 m (830 ft), making it the second-highest plunge waterfall in India</p>
+    <h3>More Details</h3>
+    <img src="th (3).jpg" alt="Girl in a jacket" style="width:450px;height:250px; display:flex; ">
+    <br><p>Jog falls is popular for its plunge from a height of 830 feet as four beautiful cascades, Raja, Rani, Roarer and Rocket. The Raja Fall cascades in one continuous flow to the depth of 250 m (830 ft). Halfway down, Roarer confronts it, which then gushes violently downwards to meet the Raja. The Rocket rushes downwards while the Rani flows in a quiet motion over the mountainside.</p>
+    <img src="th (4).jpg" alt="Girl in a jacket" style="width:450px;height:250px; display:flex; ">
+   <br>
+   <p>Tourists can watch the spellbinding beauty of the Jog falls till the bottom of the hill from which it cascades from the steps at the viewpoint at the top. There are approximately 1,400 steps till the bottom of the hill from where tourists can view the waterfall.</p>
+   <img src="th (2).jpg" alt="Girl in a jacket" style="width:450px;height:250px; display:flex; ">
+   <br>
+   <p>Jog falls is an acclaimed major tourist attraction in Karnataka for being ranked as the 36th in the list of free-falling waterfalls. It is further claimed as the 490th in the world by list of waterfalls by total height and 128th in the list of single-drop waterfalls in the World by the waterfall database.</p>
+</div>
+  <div class="main">
+    <h1>Tourist Places near Jog Falls </h1>
+    <h2>Honnemaradu: Adrenaline Junkie’s Dream</h2>
+    <img src="pa.jpg" alt="Girl in a jacket" style="width:1000px;height:400px; display:flex; ">
+    <p>Located on the ochre background of the Sharavathi River backwater, Honnemaradu is famous for its water sports. If you fancy, you can spend your day on the water through kayaking, or for the more adventurous one is by attempting windsurfing. The large expanse of the water body provided for other activities such as camping and sleeping in the open, with the sparkling of the stars as the only background music, and the sound of the water to lull you to sleep.  </p>
+    <p><b>Interactive Tip:</b> Do not leave behind swimwear and a good camera to take beautiful pictures. Most importantly, don’t miss the sun-rise on the reservoir; it is splendid!</p>
+    <br>
+    <h2> Sigandur: The Spiritual Retreat</h2>
+    <img src="gggddd.jpg" alt="Girl in a jacket" style="width:1000px;height:400px; display:flex; ">
+    <p>It takes a little over 30 minutes by car to get to Sigandur, the blessed village of Sigandur Chowdeshwari Temple. Chowdeshwari temple is a place of worship of Goddess Chowdeshwari enveloped by rolling hills and green forestary. Notably, the arduous trip to Sigandur is as inspiring as the final place of pilgrimage since one has to ferry across the Sharavathi River to reach the final destination.</p>
+    <h2> Murudeshwar:</h2>
+    <img src="mud.jpg" alt="Girl in a jacket" style="width:1000px;height:400px; display:flex; ">
+    <p>The Coastal Gem Craving some beach time? Visit Murudeshwar, the great place of Shiva statue which is breathtakingly beautiful and placed on the backdrop of the blue water of Arabian Sea. A visit to the Murudeshwar Temple which is beautifully carved out of black stone proves to be an interesting landmark. Enjoy a leisurely walk by the shoreline of the beach after visiting the temple or go for adventurous water sports.  </p>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <h1>THANKS FOR WATCHING</h1>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <i class="material-icons">home</i>
+  <i class="material-icons">settings</i>
+  <i class="material-icons">mail</i>
+  <i class="material-icons">facebook</i>
+  <i class="material-icons">telegram</i>
+  </div>
+  
+
+</body>
+</html>
+
+
