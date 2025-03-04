@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table, th, td {
+        border:1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+        <br><div>
+            <label for="txt1">value 1</label>
+            <input type="text" id="val1" name="val1" value="" placeholder="enter ur value 1">
+        </div>
+       <br> <div>
+            <label for="txt2">value 2</label>
+             <input type="text" id="val2"  name="val2" value="" placeholder="enter ur value 2">
+        </div>
+        <br><div>
+            <button onclick="getResult()">submit</button>
+        </div>
+        <div style="color:chocolate" id="fnlname"></h1>
+
+  
+
+        <script>
+            function getResult(){
+                var val1 =document.getElementById('val1').value;
+                var val2 =document.getElementById('val2').value;
+                
+                var result;
+
+                if(!isNaN(val1>10) && !isNaN(val2>10)){
+                    let resulta = (parseFloat(val1) + parseFloat(val2))* (parseFloat(val1) - parseFloat(val2));
+                    let results = (parseFloat(val1)*parseFloat(val1))+(2* parseFloat(val1)*parseFloat(val2)) +(parseFloat(val2)*parseFloat(val2));
+                    let resultm = parseFloat(val1) * parseFloat(val2) ;
+                    let resultd = parseFloat(val1) / parseFloat(val2) ;
+                    let resultmod = parseFloat(val1) % parseFloat(val2) ;
+                    let resultinc=parseFloat(val1);
+                    let resultdec=parseFloat(val1);
+                    let resultexe= parseFloat(val1) ** parseFloat(val2) ; 
+                    resultinc++;
+                    resultdec--;
+                    result=`<table style="width:100%" >
+                        <tr >
+                            <td >${val1}<sup>2</sup>-${val2}<sup>2</sup>=${resulta}</td>
+                        </tr>
+                        
+                         </tr>
+                        <tr style="height:40px;" >
+                            <td>(${val1}+${val2})<sup>2</sup>=${results}</td>
+                        </tr>
+                        
+  <tr style="height:40px;">
+    <td>${val1}</td>
+    <td>${val2}</td>
+    <td>/</td>
+    <td>${val1}/${val2}</td>
+    <td>${resultd}</td>
+  </tr>
+  <tr style="height:40px;" >
+    <td>${val1}</td>
+    <td>${val2}</td>
+    <td>%</td>
+    <td>${val1}%${val2}</td>
+    <td>${resultmod}</td>
+  </tr>
+  <tr style="height:40px;" >
+    <td>${val1}</td>
+    <td>${val2}</td>
+    <td>++</td>
+    <td>++${val1}++</td>
+    <td>${resultinc}</td>
+  </tr>
+  <tr style="height:40px;">
+    <td>${val1}</td>
+    <td>${val2}</td>
+    <td>--</td>
+    <td>--${val2}</td>
+    <td>${resultdec}</td>
+  </tr>
+  <tr style="height:40px;">
+    <td>${val1}</td>
+    <td>${val2}</td>
+    <td>**</td>
+    <td>${val1}**${val2}</td>
+    <td>${resultexe}</td>
+  </tr>
+</table>`
+  
+                }else{
+                     resultconcat =val1 +val2 ;
+                     concatArray=resultconcat.split('');
+                     reverseArray=concatArray.reverse();
+                     reversestring=reverseArray.join('');
+                    result=`
+                     <table style="width:100%">
+    <tr>
+        <th>x</th>
+        <th>y</th>
+        <th>concat</th>
+        <th>length</th>
+        <th style="width:50%">reverse</th>
+
+    </tr>
+    <tr style="height:40px;" >
+        <td>${val1}</td>
+        <td>${val2}</td>
+        <td>${resultconcat}</td>
+        <td>${resultconcat.length}</td>
+        <td>${reversestring}</td>
+    </tr>
+  
+</table>`
+                }
+                document.getElementById('fnlname').innerHTML = result;
+            }
+        </script>
+</body>
+</html>
