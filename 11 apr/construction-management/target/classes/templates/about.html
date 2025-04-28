@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${about.title}">About Us</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Your Company Logo</div>
+        <ul class="nav-links">
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li><a th:href="@{/projects}">Projects</a></li>
+            <li><a th:href="@{/services}">Services</a></li>
+            <li><a th:href="@{/blogs}">Blogs</a></li>
+            <li><a th:href="@{/gallery}">Gallery</a></li>
+            <li><a th:href="@{/contact}">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="about-section">
+        <h1 th:text="${about.title}">About Us</h1>
+        <div class="about-content">
+            <img th:src="@{${about.imageUrl}}" alt="About Us Image">
+            <p th:text="${about.description}">Company description goes here...</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+</footer>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

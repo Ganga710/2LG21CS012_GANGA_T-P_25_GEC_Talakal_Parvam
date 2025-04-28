@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Property</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body>
+    
+  <div class="min-h-screen flex flex-col items-center pt-16 px-4">
+    <h2 class="text-center text-lg font-medium mb-6 relative inline-block">
+      Submit Property
+      <span
+        class="block h-1 w-16 bg-green-600 rounded-full mx-auto mt-1"
+      ></span>
+    </h2>
+
+    <form
+      class="w-full max-w-4xl"
+      onsubmit="event.preventDefault(); window.location.href='property-list.html';"
+    >
+      <!-- Basic Information -->
+      <fieldset class="mb-16 border-t border-gray-300 pt-6">
+        <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+          Basic Information
+        </legend>
+
+        <div class="flex flex-col space-y-4 max-w-4xl">
+          <label class="flex items-center space-x-4">
+            <span class="text-xs text-gray-600 w-20">Title</span>
+            <input
+              type="text"
+              placeholder="Enter Title"
+              class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+            />
+          </label>
+
+          <label class="flex items-start space-x-4">
+            <span class="text-xs text-gray-600 w-20 pt-2">Content</span>
+            <textarea
+              rows="3"
+              placeholder="Enter Content"
+              class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 resize-none focus:outline-none focus:ring-1 focus:ring-green-600"
+            ></textarea>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Price & Location -->
+      <fieldset class="mb-16 border-t border-gray-300 pt-6">
+        <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+          Price &amp; Location
+        </legend>
+
+        <div class="max-w-4xl space-y-6">
+          <div class="flex flex-wrap items-center space-x-4">
+            <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+              <span class="text-xs text-gray-600 w-20">Price</span>
+              <input
+                type="text"
+                placeholder="Enter Price"
+                class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+              />
+            </label>
+
+            <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+              <span class="text-xs text-gray-600 w-20">Area Size</span>
+              <input
+                type="text"
+                placeholder="Enter Area Size (in sqrt)"
+                class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+              />
+            </label>
+          </div>
+
+          <label class="flex items-center space-x-4 max-w-[460px]">
+            <span class="text-xs text-gray-600 w-20">Address</span>
+            <input
+              type="text"
+              placeholder="Enter Address"
+              class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+            />
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Add Images -->
+      <fieldset class="mb-12 border-t border-gray-300 pt-6">
+        <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+          Add Images
+        </legend>
+
+        <div class="max-w-4xl flex flex-wrap items-center space-x-4">
+          <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+            <span class="text-xs text-gray-600 w-20">Image</span>
+            <input
+              type="file"
+              class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+            />
+          </label>
+
+          <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+            <span class="text-xs text-gray-600 w-20">Image</span>
+            <input
+              type="file"
+              class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+            />
+          </label>
+        </div>
+      </fieldset><html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Submit Property</title>
+          <script src="https://cdn.tailwindcss.com"></script>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          />
+        </head>
+        <body>
+          <div class="min-h-screen flex flex-col items-center pt-16 px-4">
+            <h2 class="text-center text-lg font-medium mb-6 relative inline-block">
+              Submit Property
+              <span
+                class="block h-1 w-16 bg-green-600 rounded-full mx-auto mt-1"
+              ></span>
+            </h2>
+        
+            <form id="submitPropertyForm" class="w-full max-w-4xl">
+              <!-- Basic Information -->
+              <fieldset class="mb-16 border-t border-gray-300 pt-6">
+                <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+                  Basic Information
+                </legend>
+        
+                <div class="flex flex-col space-y-4 max-w-4xl">
+                  <label class="flex items-center space-x-4">
+                    <span class="text-xs text-gray-600 w-20">Title</span>
+                    <input
+                      type="text"
+                      placeholder="Enter Title"
+                      class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                      required
+                    />
+                  </label>
+        
+                  <label class="flex items-start space-x-4">
+                    <span class="text-xs text-gray-600 w-20 pt-2">Content</span>
+                    <textarea
+                      rows="3"
+                      placeholder="Enter Content"
+                      class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 resize-none focus:outline-none focus:ring-1 focus:ring-green-600"
+                      required
+                    ></textarea>
+                  </label>
+                </div>
+              </fieldset>
+        
+              <!-- Price & Location -->
+              <fieldset class="mb-16 border-t border-gray-300 pt-6">
+                <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+                  Price &amp; Location
+                </legend>
+        
+                <div class="max-w-4xl space-y-6">
+                  <div class="flex flex-wrap items-center space-x-4">
+                    <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+                      <span class="text-xs text-gray-600 w-20">Price</span>
+                      <input
+                        type="text"
+                        placeholder="Enter Price"
+                        class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                        required
+                      />
+                    </label>
+        
+                    <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+                      <span class="text-xs text-gray-600 w-20">Area Size</span>
+                      <input
+                        type="text"
+                        placeholder="Enter Area Size (in sqrt)"
+                        class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                        required
+                      />
+                    </label>
+                  </div>
+        
+                  <label class="flex items-center space-x-4 max-w-[460px]">
+                    <span class="text-xs text-gray-600 w-20">Address</span>
+                    <input
+                      type="text"
+                      placeholder="Enter Address"
+                      class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                      required
+                    />
+                  </label>
+                </div>
+              </fieldset>
+        
+              <!-- Add Images -->
+              <fieldset class="mb-12 border-t border-gray-300 pt-6">
+                <legend class="text-sm font-semibold px-1 -mt-6 mb-6 inline-block">
+                  Add Images
+                </legend>
+        
+                <div class="max-w-4xl flex flex-wrap items-center space-x-4">
+                  <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+                    <span class="text-xs text-gray-600 w-20">Image</span>
+                    <input
+                      type="file"
+                      class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                    />
+                  </label>
+        
+                  <label class="flex items-center space-x-4 flex-1 min-w-[220px]">
+                    <span class="text-xs text-gray-600 w-20">Image</span>
+                    <input
+                      type="file"
+                      class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600"
+                    />
+                  </label>
+                </div>
+              </fieldset>
+        
+              <button
+                type="submit"
+                class="bg-green-700 text-white font-semibold text-sm px-5 py-2 rounded-md hover:bg-green-800 transition"
+              >
+                Submit Property
+              </button>
+            </form>
+          </div>
+        
+          <script>
+            document.getElementById('submitPropertyForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              // On submit, redirect to property-list page
+              window.location.th:href="@{/property-list}";
+            });
+          </script>
+        </body>
+        </html>
+
+      <button
+        type="submit"
+        class="bg-green-700 text-white font-semibold text-sm px-5 py-2 rounded-md hover:bg-green-800 transition"
+      >
+        Submit Property
+      </button>
+    </form>
+  </div>
+</body>
+</html>

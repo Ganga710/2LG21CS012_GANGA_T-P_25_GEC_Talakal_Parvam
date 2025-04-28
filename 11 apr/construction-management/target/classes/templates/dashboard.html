@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Construction Company</title>
+    <link rel="stylesheet" th:href="@{/dashboard.css}">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>CONSTRUCTION COMPANY</h2>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Dashboard</h1>
+                <button class="menu-toggle">&#9776;</button>
+            </header>
+            <div class="card-grid">
+                <div class="card">Projects</div>
+                <div class="card">Services</div>
+                <div class="card">Testimonials</div>
+                <div class="card">Blog Posts</div>
+                <div class="card">Gallery</div>
+            </div>
+        </main>
+    </div>
+    <script th:src="@{/dashboard.js}"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .top-bar {
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 14px;
+            padding: 5px 20px;
+        }
+        
+        .top-bar .contact span {
+            margin-right: 20px;
+        }
+        
+        .nav-bar {
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        
+        .nav-bar .logo {
+            width: 120px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .submit-btn {
+            background-color: #24b924;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .register-container {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        
+        .register-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        .register-form h2 {
+            margin-bottom: 5px;
+        }
+        
+        .register-form p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .register-form input[type="text"],
+        .register-form input[type="email"],
+        .register-form input[type="tel"],
+        .register-form input[type="password"],
+        .register-form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .role-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .role-options label {
+            font-size: 14px;
+        }
+        
+        .btn.green {
+            background-color: #24b924;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .or-divider {
+            margin: 20px 0;
+            position: relative;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #ccc;
+        }
+        
+        .or-divider::before {
+            left: 0;
+        }
+        
+        .or-divider::after {
+            right: 0;
+        }
+        
+    </style>
+</head>
+<body>
+        
+    <main class="register-container">
+        <form class="register-form">
+            <h2>Register</h2>
+            <p>Access to our dashboard</p>
+
+            <input type="text" placeholder="Your Name*" required>
+            <input type="email" placeholder="Your Email*" required>
+            <input type="tel" placeholder="Your Phone*" required>
+            <input type="password" placeholder="Your Password*" required>
+
+            <div class="role-options">
+                <label><input type="radio" name="role" value="user" checked> User</label>
+                <label><input type="radio" name="role" value="agent"> Agent</label>
+                
+            </div>
+
+            <label for="imageUpload"><b>User Image</b></label>
+            <input type="file" id="imageUpload">
+
+            <button type="submit" class="btn green">Register</button>
+
+            <div class="or-divider">OR</div>
+
+            <p>Already have an account? <a href="D:\Training & Placement Feb 25 - Parvam\Daily Tasks\2LG21CS012_GANGA_T-P_25_GEC_Talakal_Parvam\31feb\realestate-management\src\main\resources\templates\logreg.html">Login</a></p>
+        </form>
+    </main>
+</body>
+</html>

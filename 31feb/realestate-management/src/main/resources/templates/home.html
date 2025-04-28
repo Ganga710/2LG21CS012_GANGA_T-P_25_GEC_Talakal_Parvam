@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .search-container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .dropdown,
+        .input-field {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .dropdown {
+            width: 100%;
+        }
+        
+        .input-field {
+            width: 100%;
+        }
+        
+        .search-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-button:hover {
+         background-color: #45a049;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .service h3 {
+            font-size: 20px;
+            color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Hover Effect */
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+        
+       
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Let us Guide you Home</h1>
+        <div class="search-form">
+            <select id="property-type" class="dropdown">
+                <option value="">Select Type</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+            </select>
+            <select id="property-status" class="dropdown">
+                <option value="">Select Status</option>
+                <option value="available">Available</option>
+                <option value="sold">Sold</option>
+                <option value="under-contract">Under Contract</option>
+            </select>
+<input type="text" id="city" class="input-field" placeholder="Enter City">
+            <button id="search-button" class="search-button" onclick="searchProperty()">Search Property</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services">
+            <div class="service">
+                <img src="https://img.icons8.com/ios/50/000000/home.png" alt="Selling Service">
+                <h3>Selling Service</h3>
+                <p>This is a dummy text for filling out spaces, just some random words...</p>
+            </div>
+            <div class="service">
+                <img src="https://img.icons8.com/ios/50/000000/for-rent.png" alt="Rental Service">
+                <h3>Rental Service</h3>
+                <p>This is a dummy text for filling out spaces, just some random words...</p>
+            </div>
+            <div class="service">
+                <img src="https://img.icons8.com/ios/50/000000/list.png" alt="Property Listing">
+<h3>Property Listing</h3>
+                <p>This is a dummy text for filling out spaces, just some random words...</p>
+            </div>
+            <div class="service">
+                <img src="https://img.icons8.com/ios/50/000000/graph.png" alt="Legal Investment">
+                <h3>Legal Investment</h3>
+                <p>This is a dummy text for filling out spaces, just some random words...</p>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>

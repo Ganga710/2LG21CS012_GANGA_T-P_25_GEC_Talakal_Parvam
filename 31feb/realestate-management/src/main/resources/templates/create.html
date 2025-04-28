@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+        }
+        header {
+            background: #f4f4f4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .btn {
+            background: green;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .feature-box {
+            width: 200px;
+        }
+        .recent-property {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+        .property-card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .property-card img {
+            width: 100%;
+        }
+        .property-details {
+            padding: 15px;
+            text-align: left;
+        }
+        .why-choose-us {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .why-text {
+            max-width: 600px;
+        }
+        .how-it-works {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+        }
+        .how-step {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RealEstate</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Properties</a></li>
+                <li><a href="#">Login/Register</a></li>
+            </ul>
+        </nav>
+        <button class="btn">Post Property</button>
+    </header>
+
+    <section>
+        <h2>What We Do</h2>
+        <div class="features">
+            <div class="feature-box">
+                <i class="fas fa-home fa-2x"></i>
+                <h4>Selling Service</h4>
+                <p>We help clients sell their properties quickly and easily.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-key fa-2x"></i>
+                <h4>Rental Service</h4>
+                <p>We offer the best rental service for both tenants and landlords.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-building fa-2x"></i>
+                <h4>Property Listing</h4>
+                <p>List your properties to reach more potential buyers.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-chart-line fa-2x"></i>
+                <h4>Legal Investment</h4>
+                <p>We guide you in choosing the best legal property investment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Recent Property</h2>
+        <div class="recent-property">
+            <div class="property-card">
+                <img src="https://via.placeholder.com/250x150" alt="Property">
+                <div class="property-details">
+                    <h4>Villa Home</h4>
+                    <p>$1200/month</p>
+                    <p>2 Beds, 1 Bath</p>
+                    <p><i class="fas fa-calendar"></i> 20-01-2023</p>
+                </div>
+            </div>
+            <div class="property-card">
+                <img src="https://via.placeholder.com/250x150" alt="Property">
+                <div class="property-details">
+                    <h4>Modern Apartment</h4>
+                    <p>$1500/month</p>
+                    <p>3 Beds, 2 Baths</p>
+                    <p><i class="fas fa-calendar"></i> 18-01-2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="why-text">
+            <h2>Why Choose Us</h2>
+            <p>✔ The Best Property Services</p>
+            <p>✔ Experience and Quality</p>
+            <p>✔ 24/7 Customer Support</p>
+            <p>✔ Trusted Agents</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>How It Work</h2>
+        <div class="how-it-works">
+            <div class="how-step">
+                <i class="fas fa-comments fa-2x"></i>
+                <h4>Discussion</h4>
+                <p>We talk with you to understand your needs.</p>
+            </div>
+            <div class="how-step">
+                <i class="fas fa-file-signature fa-2x"></i>
+                <h4>Final Review</h4>
+                <p>We analyze and finalize property options.</p>
+            </div>
+            <div class="how-step">
+                <i class="fas fa-handshake fa-2x"></i>
+                <h4>Acquire</h4>
+                <p>You get the best deal and own your dream property.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real Estate Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f5f7fa;
+      }
+      
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:black;
+        padding: 15px 30px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+      
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      
+      .nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+      
+      .nav-links li a:hover {
+        background-color:black;
+      }
+      
+      /* Hamburger */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      
+      .hamburger span {
+        height: 3px;
+        width: 25px;
+        background: black;
+        margin: 4px 0;
+        border-radius: 5px;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: absolute;
+          top: 65px;
+          right: 0;
+          background:black;
+          flex-direction: column;
+          width: 100%;
+          display: none;
+          text-align: center;
+          padding: 10px 0;
+        }
+      
+        .nav-links.active {
+          display: flex;
+        }
+      
+        .hamburger {
+          display: flex;
+        }
+      }
+      
+      /* Sections */
+      .section {
+        padding: 80px 20px;
+        text-align: center;
+      }
+      
+      .section:nth-child(odd) {
+        background-color: #eaf2f8;
+      }
+      
+      .section h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+      
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">RealEstate</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#property">Property</a></li>
+        <li><a href="#agent">Agent</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login/Register</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="home" class="section">
+    <div>
+      <section class="filter-section">
+          <h2>Find Your Perfect Property</h2>
+          <form id="searchForm" class="filter-form">
+            <div class="filter-group">
+              <label for="landSize">Land Size</label>
+              <select id="landSize" name="landSize">
+                <option value="">Any</option>
+                <option value="0-500">0 - 500 sqft</option>
+                <option value="501-1000">501 - 1000 sqft</option>
+                <option value="1001-2000">1001 - 2000 sqft</option>
+                <option value="2000+">2000+ sqft</option>
+              </select>
+            </div>
+        
+            <div class="filter-group">
+              <label for="priceRange">Price</label>
+              <select id="priceRange" name="priceRange">
+                <option value="">Any</option>
+                <option value="0-100000">$0 - $100,000</option>
+                <option value="100001-300000">$100,001 - $300,000</option>
+                <option value="300001-600000">$300,001 - $600,000</option>
+                <option value="600000+">$600,000+</option>
+              </select>
+            </div>
+        
+            <div class="filter-group">
+              <label for="propertyType">Property Type</label>
+              <select id="propertyType" name="propertyType">
+                <option value="">Any</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="house">House</option>
+                <option value="land">Land</option>
+              </select>
+            </div>
+        
+            <div class="filter-group">
+              <label for="location">Location</label>
+              <select id="location" name="location">
+                <option value="">Any</option>
+                <option value="newyork">New York</option>
+                <option value="losangeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <option value="houston">Houston</option>
+              </select>
+            </div>
+        
+            <div class="filter-group">
+              <button type="submit" class="search-btn">Search</button>
+            </div>
+          </form>
+        </section>
+      </div>
+  </section>
+  <h1 style="text-align:center">WHAT WE DO<h1>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We are a leading real estate management system connecting agents with property seekers.</p>
+  </section>
+
+  <section id="property" class="section">
+    <h2>Properties</h2>
+    <p>Explore properties for rent and sale across different cities.</p>
+  </section>
+
+  <section id="agent" class="section">
+    <h2>Our Agents</h2>
+    <p>Meet our professional and experienced agents ready to assist you.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email us at contact@realestate.com or call 123-456-7890</p>
+  </section>
+
+  <section id="login" class="section">
+    <h2>Login / Register</h2>
+    <p>Please login or register to manage your listings and favorites.</p>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Navbar</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            padding: 1rem 2rem;
+        }
+        
+        .logo a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 60px;
+                flex-direction: column;
+                background-color: #003366;
+                width: 200px;
+                display: none;
+            }
+        
+            .nav-links.active {
+                display: flex;
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" th:href="@{/}">🏡 RealEstate</a>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" th:href="@{/}">Home</a></li>
+            <li><a href="/about" th:href="@{/about}">About Us</a></li>
+            <li><a href="/properties" th:href="@{/properties}">Property</a></li>
+            <li><a href="/agents" th:href="@{/agents}">Agent</a></li>
+            <li><a href="/contact" th:href="@{/contact}">Contact</a></li>
+            <li><a href="/login" th:href="@{/login}">Login/Register</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </nav>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
