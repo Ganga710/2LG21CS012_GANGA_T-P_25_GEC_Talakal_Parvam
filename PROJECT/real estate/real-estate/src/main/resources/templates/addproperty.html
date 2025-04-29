@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Property</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="min-h-screen flex flex-col items-center pt-16 px-4">
+    <h2 class="text-center text-2xl font-bold mb-8">Submit Property</h2>
+
+    <form class="w-full max-w-4xl" onsubmit="handleSubmit(event)">
+      <!-- Basic Information -->
+      <fieldset class="mb-10">
+        <legend class="text-lg font-semibold mb-4">Basic Information</legend>
+
+        <div class="space-y-4">
+          <input type="text" placeholder="Enter Title" class="w-full border border-gray-300 rounded px-3 py-2" id="title" required />
+          <textarea placeholder="Enter Content" rows="3" class="w-full border border-gray-300 rounded px-3 py-2" id="content" required></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Price & Location -->
+      <fieldset class="mb-10">
+        <legend class="text-lg font-semibold mb-4">Price & Location</legend>
+
+        <div class="space-y-4">
+          <input type="text" placeholder="Enter Price" class="w-full border border-gray-300 rounded px-3 py-2" id="price" required />
+          <input type="text" placeholder="Enter Area Size (in sqft)" class="w-full border border-gray-300 rounded px-3 py-2" id="size" required />
+          <input type="text" placeholder="Enter Address" class="w-full border border-gray-300 rounded px-3 py-2" id="address" required />
+        </div>
+      </fieldset>
+
+      <!-- Images -->
+      <fieldset class="mb-10">
+        <legend class="text-lg font-semibold mb-4">Add Images</legend>
+
+        <div class="space-y-4">
+          <input type="file" class="w-full border border-gray-300 rounded px-3 py-2" id="image" required />
+        </div>
+      </fieldset>
+
+      <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+        Submit Property
+      </button>
+    </form>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+      const price = document.getElementById('price').value;
+      const size = document.getElementById('size').value;
+      const address = document.getElementById('address').value;
+      const imageInput = document.getElementById('image');
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imageUrl = e.target.result;
+
+        const property = { title, content, price, size, address, imageUrl };
+
+        let savedProperties = JSON.parse(localStorage.getItem('properties')) || [];
+        savedProperties.push(property);
+        localStorage.setItem('properties', JSON.stringify(savedProperties));
+
+        window.location.href = 'property-list.html';
+      };
+
+      if (imageInput.files[0]) {
+        reader.readAsDataURL(imageInput.files[0]);
+      } else {
+        alert('Please upload an image.');
+      }
+    }
+  </script>
+
+</body>
+</html>
