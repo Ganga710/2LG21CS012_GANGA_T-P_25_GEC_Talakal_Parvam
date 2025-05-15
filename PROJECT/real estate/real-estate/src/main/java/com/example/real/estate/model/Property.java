@@ -3,40 +3,30 @@ package com.example.real.estate.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Property_list")
+@Table(name="properties")
 public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;          // e.g., "Golden Urban House For Sell"
-    private String location;       // e.g., "123 Street, New York, USA"
-    private Double price;          // e.g., 12345.0
-    private String content;           // e.g., "Apartment", "Villa", "Office"
-    private Integer size;          // e.g., 1000 (in sqft)
-    private String imageUrl;       // path to image, e.g., "/assets/img/property-1.jpg"
-    private String status;         // "For Rent" or "For Sell"
-
-    // Optional fields (if needed for tab 3)
-    private Integer beds;
-    private Integer baths;
+    private String title;
+    private String description;
+    private Integer size;
+    private Double price;
+    private String address;
+    private String imageUrl; // this will store the relative path to the uploaded image
 
     // Constructors
-    public Property() {
-    }
+    public Property() {}
 
-    public Property(String title, String location, Double price, Integer size,
-                    String imageUrl, String status, Integer beds, Integer baths, String content) {
+    public Property(String title, String description, Integer size, Double price, String address, String imageUrl) {
         this.title = title;
-        this.location = location;
-        this.price = price;
-        this.content = content;
+        this.description = description;
         this.size = size;
+        this.price = price;
+        this.address = address;
         this.imageUrl = imageUrl;
-        this.status = status;
-        this.beds = beds;
-        this.baths = baths;
     }
 
     // Getters and Setters
@@ -57,28 +47,12 @@ public class Property {
         this.title = title;
     }
 
-    public String getLocation() {
-        return location;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getSize() {
@@ -89,6 +63,22 @@ public class Property {
         this.size = size;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -96,31 +86,4 @@ public class Property {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Integer getBeds() {
-        return beds;
-    }
-
-    public void setBeds(Integer beds) {
-        this.beds = beds;
-    }
-
-    public Integer getBaths() {
-        return baths;
-    }
-
-    public void setBaths(Integer baths) {
-        this.baths = baths;
-    }
 }
-
-    
-

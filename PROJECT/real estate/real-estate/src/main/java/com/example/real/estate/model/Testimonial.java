@@ -1,22 +1,33 @@
 package com.example.real.estate.model;
 
-
-    import jakarta.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name="testimonial")
+@Table(name = "testimonials")
 public class Testimonial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String message;
-    private String clientName;
-    private String profession;
-    private String imageUrl; // e.g., "assets/img/testimonial-1.jpg"
+    private String title;
+
+    @Column(length = 1000)
+    private String description;
+
+    private String imageUrl; // stores the relative path to the uploaded image
+
+    // Constructors
+    public Testimonial() {}
+
+    public Testimonial(String title, String description, String imageUrl) {
+        this.title = title;
+        this.description = description;
+        this.imageUrl = imageUrl;
+    }
 
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -25,28 +36,20 @@ public class Testimonial {
         this.id = id;
     }
 
-    public String getMessage() {
-        return message;
+    public String getTitle() {
+        return title;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getProfession() {
-        return profession;
-    }
-
-    public void setProfession(String profession) {
-        this.profession = profession;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImageUrl() {
@@ -57,4 +60,3 @@ public class Testimonial {
         this.imageUrl = imageUrl;
     }
 }
-    

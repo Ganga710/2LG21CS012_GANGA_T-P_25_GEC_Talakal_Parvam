@@ -1,11 +1,15 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title>Property Listings</title>  
-  <script src="https://cdn.tailwindcss.com"></script>  
-  <link href="/assets/img/favicon.ico" rel="icon">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Makaan - Real Estate HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,411 +21,456 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="/assets/css/style.css" rel="stylesheet">
-  <style>  
-    .popup {  
-      display: none; /* Initially hidden */  
-      position: fixed;  
-      top: 0;  
-      left: 0;  
-      right: 0;  
-      bottom: 0;  
-      background-color: rgba(0, 0, 0, 0.7);  
-      justify-content: center;  
-      align-items: center;
-      z-index: 50;
-    }
+</head>
+
+<body>
     
-    .popup-content {
-      width: 90%;
-      max-width: 1000px;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-  </style>  
-</head>  
-<body class="bg-gray-50 min-h-screen p-8 flex flex-col items-center">  
-  
-  <div th:fragment="navbar">
-    <div class="container-fluid nav-bar bg-transparent">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-            <a href="/" class="navbar-brand d-flex align-items-center text-center">
-                <div class="icon p-2 me-2">
-                    <img class="img-fluid" src="/assets/img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
-                </div>
-                <h1 class="m-0 text-primary">REAMS</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto">
-                    <a th:href="@{/}" class="nav-item nav-link">Home</a>
-                    <a th:href="@{/about}" class="nav-item nav-link">About</a>
-                    <a th:href="@{/property-list}" class="nav-item nav-link">Property</a>
-                    <div class="nav-item dropdown">
-                        <a href="@{/agent}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Agent</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a th:href="@{/agentlogin}" class="dropdown-item">Login</a>
-                            <a th:href="@{/register}" class="dropdown-item">Register</a>
+
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div th:fragment="navbar">
+          <div class="container-fluid nav-bar bg-transparent">
+              <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                  <a href="/" class="navbar-brand d-flex align-items-center text-center">
+                      <div class="icon p-2 me-2">
+                          <img class="img-fluid" src="/assets/img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                      </div>
+                      <h1 class="m-0 text-primary">REAMS</h1>
+                  </a>
+                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <div class="navbar-nav ms-auto">
+                          <a th:href="@{/}" class="nav-item nav-link">Home</a>
+                          <a th:href="@{/about}" class="nav-item nav-link">About</a>
+                           <a th:href="@{/properties}" class="nav-item nav-link">Property</a>
+                          <a th:href="@{/testimonials/public}" class="nav-item nav-link">Testimonial</a>
+                          <div class="nav-item dropdown">
+                              <a href="@{/agent}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Agent</a>
+                              <div class="dropdown-menu rounded-0 m-0">
+                                  <a th:href="@{/agent}" class="dropdown-item">Agent</a>
+                                  <a th:href="@{/agentlogin}" class="dropdown-item">Login</a>
+                                  <a th:href="@{agents/register}" class="dropdown-item">Register</a>
+                              </div>
+                          </div>
+                          <a th:href="@{/reams/contact}" class="nav-item nav-link">Contact</a>
+                      </div>
+                      <a th:href="@{/admin/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
+                  </div>
+              </nav>
+          </div>
+      </div>
+     
+      <!-- Navbar End -->
+
+           
+
+
+    
+       
+
+
+        <!-- Property List Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-0 gx-5 align-items-end">
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h1 class="mb-3">Property Listing</h1>
+                            <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit diam justo sed rebum.</p>
                         </div>
                     </div>
-                    <a th:href="@{/contact}" class="nav-item nav-link">Contact</a>
+                    
                 </div>
-                <a th:href="@{/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div th:each="property : ${properties}" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" th:src="${property.imageUrl}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3"th:text="'$' + ${property.price}">$12,345</h5>
+                                        <a class="d-block h5 mb-2" th:text="${property.title}">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"  th:text="${property.address}" ></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"  th:text="${property.size + ' Sqft'}"></i>1000 Sqft</small>
+                                    </div>
+                                    <div>
+                                        <a th:href="@{/reams/contact}" class="dropdown-item">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        
+                                        <ath:href="@{/reams/contact}" class="dropdown-item">contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        
+                                        <a th:href="@{/reams/contact}" class="dropdown-item">contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        
+                                        <a th:href="@{/reams/contact}" class="dropdown-item">contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        
+                                        <a th:href="@{/reams/contact}" class="dropdown-item">contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                       
+                                        <a href="loginclient.html" class="dropdown-item">contact</a>
+                                    </div>
+                                </div>
+                            </div>   
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-1.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-2.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-3.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Office</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-4.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Building</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-5.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Home</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="img/property-6.jpg" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Shop</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">$12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House For Sell</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
+        
+        
+        <!-- Property List End -->
+
+
+        <!-- Call to Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded p-3">
+                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img class="img-fluid rounded w-100" src="/assets/img/call-to-action.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h1 class="mb-3">Contact With Our Certified Agent</h1>
+                                    <p>Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
+                                </div>
+                                <a href="" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                                <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="terms.html">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="index.html">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-</div>
 
-  <div class="min-h-screen p-8 w-full max-w-7xl">  
-    <h1 class="text-3xl font-bold mb-8 text-center">Property Listings</h1>  
-    <div id="propertyCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>  
-  </div>  
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-  <!-- Popup for Property Details -->  
-  <div id="propertyPopup" class="popup">  
-    <div class="popup-content bg-white rounded-lg p-8 relative">  
-      <button class="closePopup absolute top-4 right-4 text-gray-700 text-xl hover:text-gray-900">✖</button>  
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <img id="popupImage" class="w-full h-64 md:h-96 object-cover rounded-lg mb-4" alt="Property Image">
-          <div id="popupGallery" class="flex gap-2 overflow-x-auto py-2">
-            <!-- Additional images would be added here dynamically -->
-          </div>
-        </div>
-        <div>
-          <h3 id="popupTitle" class="text-3xl font-bold text-gray-800 mb-4"></h3>  
-          <p id="popupContent" class="text-gray-600 mb-6 text-lg"></p>  
-          <div class="space-y-3 mb-6">
-            <p><span class="font-semibold text-green-600 text-2xl" id="popupPrice"></span></p>  
-            <p class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span id="popupAddress"></span></p>  
-            <p class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path></svg> <span id="popupSize"></span></p>
-          </div>
-          
-          <!-- Owner details in the property popup -->
-          <div class="bg-gray-50 p-4 rounded-lg mb-6">
-            <h4 class="font-semibold text-lg mb-2">Property Owner</h4>
-            <div class="flex items-center">
-              <div id="popupOwnerInitials" class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-3 text-lg font-bold"></div>
-              <div>
-                <p id="popupOwnerName" class="font-medium"></p>
-                <p id="popupOwnerEmail" class="text-gray-600 text-sm"></p>
-                <p id="popupOwnerPhone" class="text-gray-600 text-sm"></p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-6">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg mr-4">Schedule Viewing</button>
-            <button id="openContactPopup" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-lg">Contact Owner</button>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>
+    <!-- Template Javascript -->
+    <script src="/assets/js/main.js"></script>
+</body>
 
-  <!-- Popup for Contact Details -->  
-  <div id="contactPopup" class="popup">  
-    <div class="popup-content bg-white rounded-lg p-8 relative">  
-      <button class="closePopup absolute top-4 right-4 text-gray-700 text-xl hover:text-gray-900">✖</button>  
-      <h3 class="text-3xl font-bold text-gray-800 mb-6">Contact Property Owner</h3>  
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <div class="mb-6">
-            <h4 class="text-xl font-semibold mb-4">Owner Details</h4>
-            <div class="flex items-center mb-4">
-              <div id="contactOwnerInitials" class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mr-4 text-2xl font-bold"></div>
-              <div>
-                <p id="contactOwnerName" class="font-bold text-lg"></p>
-                <p class="text-gray-600">Property Owner</p>
-              </div>
-            </div>
-            <p class="flex items-center mb-2"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> <span id="contactOwnerPhone"></span></p>
-            <p class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> <span id="contactOwnerEmail"></span></p>
-          </div>
-          <div>
-            <h4 class="text-xl font-semibold mb-4">Property</h4>
-            <p id="contactPropertyTitle" class="font-bold mb-2"></p>
-            <p id="contactPropertyAddress" class="text-gray-600"></p>
-            <p id="contactPropertyPrice" class="text-green-600 font-semibold mt-2"></p>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="text-xl font-semibold mb-4">Send a Message</h4>
-          <form class="space-y-4">
-            <div>
-              <label class="block text-gray-700 mb-2">Your Name</label>
-              <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Enter your name">
-            </div>
-            <div>
-              <label class="block text-gray-700 mb-2">Your Email</label>
-              <input type="email" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Enter your email">
-            </div>
-            <div>
-              <label class="block text-gray-700 mb-2">Your Phone</label>
-              <input type="tel" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Enter your phone number">
-            </div>
-            <div>
-              <label class="block text-gray-700 mb-2">Message</label>
-              <textarea class="w-full border border-gray-300 rounded-lg px-4 py-2" rows="4" placeholder="I'm interested in this property..."></textarea>
-            </div>
-            <button type="button" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-lg w-full">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>  
-  </div>
-  <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Get In Touch</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Quick Links</h5>
-                <a class="btn btn-link text-white-50" href="about.html">About Us</a>
-                <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
-                <a class="btn btn-link text-white-50" href="">Our Services</a>
-                <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                <a class="btn btn-link text-white-50" href="terms.html">Terms & Condition</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Photo Gallery</h5>
-                <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-1.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-2.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-3.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-4.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-5.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="/assets/img/property-6.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-      
-      <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-      Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="">Home</a>
-                        <a href="">Cookies</a>
-                        <a href="">Help</a>
-                        <a href="">FQAs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-  <script>  
-    document.addEventListener('DOMContentLoaded', function() {  
-      const container = document.getElementById('propertyCardsContainer');  
-      // Get properties from localStorage
-      const savedProperties = JSON.parse(localStorage.getItem('properties')) || [];
-      // Get users from localStorage (or create dummy data if needed)
-      const users = JSON.parse(localStorage.getItem('users')) || [
-        { id: 1, name: "James Wilson", email: "james@example.com", phone: "(555) 123-4567" },
-        { id: 2, name: "Sarah Johnson", email: "sarah@example.com", phone: "(555) 987-6543" },
-        { id: 3, name: "Michael Brown", email: "michael@example.com", phone: "(555) 456-7890" }
-      ];
-      
-      // Store users if they don't exist yet
-      if (!localStorage.getItem('users')) {
-        localStorage.setItem('users', JSON.stringify(users));
-      }
-
-      if (savedProperties.length === 0) {  
-        container.innerHTML = `<p class="text-gray-500 text-center text-lg mt-12 col-span-3">No properties available.</p>`;  
-        return;  
-      }  
-
-      savedProperties.forEach(function(property, index) {
-        // Assign a random owner if not already assigned
-        if (!property.ownerId) {
-          property.ownerId = users[index % users.length].id;
-          // Update the property in localStorage
-          savedProperties[index] = property;
-          localStorage.setItem('properties', JSON.stringify(savedProperties));
-        }
-        
-        // Find owner details
-        const owner = users.find(user => user.id === property.ownerId) || 
-                    { name: "Unknown Owner", email: "contact@example.com", phone: "(555) 000-0000" };
-        
-        // Create owner initials for avatar
-        const ownerInitials = owner.name.split(' ')
-                              .map(n => n[0])
-                              .join('')
-                              .toUpperCase();
-        
-        const card = document.createElement('div');  
-        card.className = 'bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between';  
-
-        card.innerHTML = `  
-          <img class="w-full h-48 object-cover" src="${property.imageUrl}" alt="Property Image">  
-          <div class="p-5 flex flex-col flex-grow">  
-            <h3 class="text-xl font-bold text-gray-800 mb-2">${property.title}</h3>  
-            <p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3">${property.content}</p>  
-            <div class="space-y-1 text-sm text-gray-500 mb-4">  
-              <p><span class="font-semibold text-green-600">$${property.price}</span></p>  
-              <p class="truncate">${property.address}</p>  
-              <p>${property.size} Sqft</p>  
-            </div>
-            <div class="flex items-center mb-4 pt-2 border-t border-gray-100">
-              <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center mr-2 text-sm font-bold">${ownerInitials}</div>
-              <p class="text-sm text-gray-600">${owner.name}</p>
-            </div>
-            <div class="flex justify-between gap-2 mt-auto">  
-              <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-lg view-button" data-property-index="${savedProperties.indexOf(property)}">View</button>  
-              <button class="flex-1 bg-green-500 hover:bg-green-600 text-white text-sm py-2 rounded-lg contact-button" data-property-index="${savedProperties.indexOf(property)}">Contact</button>  
-            </div>  
-          </div>  
-        `;  
-        container.appendChild(card);  
-      });  
-
-      // Popup functionality  
-      const propertyPopup = document.getElementById('propertyPopup');  
-      const contactPopup = document.getElementById('contactPopup');
-      let currentProperty = null;
-      let currentOwner = null;
-      
-      // Close popup buttons
-      document.querySelectorAll('.closePopup').forEach(button => {
-        button.addEventListener('click', function() {
-          propertyPopup.style.display = "none";
-          contactPopup.style.display = "none";
-        });
-      });
-
-      // Open contact popup from property popup
-      document.getElementById('openContactPopup').addEventListener('click', function() {
-        propertyPopup.style.display = "none";
-        
-        // Make sure we have the current property and owner
-        if (currentProperty && currentOwner) {
-          populateContactPopup(currentProperty, currentOwner);
-          contactPopup.style.display = "flex";
-        }
-      });
-
-      // Helper function to get owner initials
-      function getInitials(name) {
-        return name.split(' ')
-                  .map(n => n[0])
-                  .join('')
-                  .toUpperCase();
-      }
-      
-      // Populate property popup with data
-      function populatePropertyPopup(property, owner) {
-        document.getElementById('popupTitle').innerText = property.title;  
-        document.getElementById('popupImage').src = property.imageUrl;  
-        document.getElementById('popupContent').innerText = property.content;  
-        document.getElementById('popupPrice').innerText = '$' + property.price;  
-        document.getElementById('popupAddress').innerText = property.address;  
-        document.getElementById('popupSize').innerText = property.size + ' Sqft';
-        
-        // Owner details
-        document.getElementById('popupOwnerInitials').innerText = getInitials(owner.name);
-        document.getElementById('popupOwnerName').innerText = owner.name;
-        document.getElementById('popupOwnerEmail').innerText = owner.email;
-        document.getElementById('popupOwnerPhone').innerText = owner.phone;
-        
-        // Store current property and owner
-        currentProperty = property;
-        currentOwner = owner;
-      }
-      
-      // Populate contact popup with data
-      function populateContactPopup(property, owner) {
-        // Owner details
-        document.getElementById('contactOwnerInitials').innerText = getInitials(owner.name);
-        document.getElementById('contactOwnerName').innerText = owner.name;
-        document.getElementById('contactOwnerEmail').innerText = owner.email;
-        document.getElementById('contactOwnerPhone').innerText = owner.phone;
-        
-        // Property details
-        document.getElementById('contactPropertyTitle').innerText = property.title;
-        document.getElementById('contactPropertyAddress').innerText = property.address;
-        document.getElementById('contactPropertyPrice').innerText = '$' + property.price;
-      }
-
-      // Event delegation for buttons
-      container.addEventListener('click', function(event) {  
-        if (event.target.classList.contains('view-button') || event.target.classList.contains('contact-button')) {
-          const propertyIndex = event.target.getAttribute('data-property-index');
-          const property = savedProperties[propertyIndex];
-          const owner = users.find(user => user.id === property.ownerId) || 
-                       { name: "Unknown Owner", email: "contact@example.com", phone: "(555) 000-0000" };
-          
-          if (event.target.classList.contains('view-button')) {
-            populatePropertyPopup(property, owner);
-            propertyPopup.style.display = "flex";
-          } else if (event.target.classList.contains('contact-button')) {
-            populateContactPopup(property, owner);
-            contactPopup.style.display = "flex";
-          }
-        }
-      });  
-
-      // Close popups when clicking outside of content
-      window.onclick = function(event) {  
-        if (event.target === propertyPopup) {  
-          propertyPopup.style.display = "none";  
-        }
-        if (event.target === contactPopup) {
-          contactPopup.style.display = "none";
-        }
-      };  
-    });  
-  </script>  
-
-</body>  
 </html>

@@ -18,14 +18,11 @@ public class HomeController {
     public String showAgentPage() {
         return "agent"; // matches agent.html in templates
     }
-    @GetMapping("/property-list")
-    public String propertyList() {
-        return "property-list"; // This will return property-list.html
+    @GetMapping("/agent/login")
+    public String showLoginForm() {
+        return "loginagent"; // returns loginagent.html
     }
-    @GetMapping("/contact")
-    public String contact() {
-        return "contact"; // This will return property-list.html
-    }
+   
     
 
     

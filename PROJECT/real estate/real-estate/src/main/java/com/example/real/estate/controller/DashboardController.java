@@ -24,8 +24,5 @@ public class DashboardController {
         return "showtest"; // you should have showtest.html
     }
 
-    @GetMapping("/addtestimonials")
-    public String addTestimonials() {
-        return "addtest"; // you should have addtest.html
-    }
+    
 }

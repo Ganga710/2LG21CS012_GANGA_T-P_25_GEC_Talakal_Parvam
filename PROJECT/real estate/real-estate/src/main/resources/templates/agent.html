@@ -61,18 +61,18 @@
                         <div class="navbar-nav ms-auto">
                             <a th:href="@{/}" class="nav-item nav-link">Home</a>
                             <a th:href="@{/about}" class="nav-item nav-link">About</a>
-                            <a th:href="@{/property-list}" class="nav-item nav-link">Property</a>
+                             <a th:href="@{/properties}" class="nav-item nav-link">Property</a>
+                            <a th:href="@{/testimonials/public}" class="nav-item nav-link">Testimonial</a>
                             <div class="nav-item dropdown">
-                                <a href="@{/agent}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Agent</a>
+                                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Agent</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a th:href="@{/agentlogin}" class="dropdown-item">Login</a>
-                                    <a th:href="@{/register}" class="dropdown-item">Register</a>
+                                    <a th:href="@{/agent}" class="dropdown-item">Agent</a>
+                                    <a th:href="@{/agent/login}" class="dropdown-item">Login</a>
+                                    <a th:href="@{agents/register}" class="dropdown-item">Register</a>
                                 </div>
                             </div>
-                            <a th:href="@{/contact}" class="nav-item nav-link">Contact</a>
-                        </div>
-                        <a th:href="@{/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
-                    </div>
+                             <a th:href="@{/reams/contact}" class="nav-item nav-link">Contact</a>
+                        <a th:href="@{/admin/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
                 </nav>
             </div>
         </div>
@@ -107,22 +107,7 @@
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item rounded overflow-hidden">
                             <div class="position-relative">
@@ -139,38 +124,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="/assets/img/team-3.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="/assets/img/team-4.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
+                    
                 </div>
             </div>
         </div>

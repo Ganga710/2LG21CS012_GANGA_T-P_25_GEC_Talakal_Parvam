@@ -1,28 +1,48 @@
 package com.example.real.estate.controller;
 
-
-    import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.ui.Model;
+
+import com.example.real.estate.model.Register;
+import com.example.real.estate.service.RegisterService;
+
+
 
 @Controller
 public class RegisterController {
 
-    @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new UserRegistrationDto());
-        return "register";
+    @Autowired
+    private RegisterService registerService;
+
+    // Show the registration form
+    @GetMapping("/signup")
+    public String showSignUpForm(Model model) {
+        model.addAttribute("register", new Register());
+        return "create1"; // Refers to register.html (Thymeleaf template)
     }
 
-    @PostMapping("/register")
-    public String registerUser(@ModelAttribute("user") UserRegistrationDto user) {
-        // You can add your logic to save the user in the database here!
-        System.out.println("New user registered: " + user.getFullname());
-        return "redirect:/login"; // after registration, redirect to login page
+    // Prepare form with empty Register object
+    @GetMapping("/create")
+    public String showCreateForm(Model model) {
+        model.addAttribute("register", new Register());
+        return "create1"; // Another template (likely lowercase "register.html")
     }
+
+    // Handle form submission
+    @PostMapping("/save")
+    public String saveRegister(@ModelAttribute Register regi) {
+        registerService.saveRegister(regi);
+        return "redirect:/signup/list"; // Redirect after saving
+    }
+    @GetMapping("/signup/list")
+    public String getindex1Page(Model model) {
+        model.addAttribute("index1",registerService.listAll() );
+        return "index1.html";  // This assumes index1.html is in src/main/resources/static
 }
 
     
-
+}

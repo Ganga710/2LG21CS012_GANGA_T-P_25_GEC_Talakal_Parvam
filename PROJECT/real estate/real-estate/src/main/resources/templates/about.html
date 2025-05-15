@@ -61,17 +61,19 @@
                         <div class="navbar-nav ms-auto">
                             <a th:href="@{/}" class="nav-item nav-link">Home</a>
                             <a th:href="@{/about}" class="nav-item nav-link">About</a>
-                            <a th:href="@{/property-list}" class="nav-item nav-link">Property</a>
+                             <a th:href="@{/properties}" class="nav-item nav-link">Property</a>
+                            <a th:href="@{/testimonials/public}" class="nav-item nav-link">Testimonial</a>
                             <div class="nav-item dropdown">
                                 <a href="@{/agent}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Agent</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a th:href="@{/agentlogin}" class="dropdown-item">Login</a>
-                                    <a th:href="@{/register}" class="dropdown-item">Register</a>
+                                    <a th:href="@{/agent}" class="dropdown-item">Agent</a>
+                                    <a th:href="@{/agent/login}" class="dropdown-item">Login</a>
+                                    <a th:href="@{agents/register}" class="dropdown-item">Register</a>
                                 </div>
                             </div>
-                            <a th:href="@{/contact}" class="nav-item nav-link">Contact</a>
+                            <a th:href="@{/reams/contact}" class="nav-item nav-link">Contact</a>
                         </div>
-                        <a th:href="@{/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
+                        <a th:href="@{/admin/login}" class="btn btn-primary px-3 d-none d-lg-flex">Admin</a>
                     </div>
                 </nav>
             </div>
